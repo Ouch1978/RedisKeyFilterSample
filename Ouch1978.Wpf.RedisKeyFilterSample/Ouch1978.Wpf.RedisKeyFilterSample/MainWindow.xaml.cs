@@ -1,21 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using StackExchange.Redis;
+
 using System.Diagnostics;
 using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-
-using StackExchange.Redis;
 
 namespace Ouch1978.Wpf.RedisKeyFilterSample
 {
@@ -74,9 +64,9 @@ namespace Ouch1978.Wpf.RedisKeyFilterSample
 
         private async void btnAddTestData_Click(object sender, RoutedEventArgs e)
         {
-            int testDataCount = _server.Keys(pattern: "Test_By_Ouch_*", pageSize: 1000).Count();
+            int testDataCount = _server.Keys(pattern: "00Test_By_Ouch_*", pageSize: 1000).Count();
 
-            for (int i = 1; i <= 1000; i++)
+            for (int i = 1; i <= 50000; i++)
             {
                 await RedisConnectionFactory.RedisDb.StringSetAsync(key: $"Test_By_Ouch_{testDataCount + i}", value: $"Test_By_Ouch_{testDataCount + i}");
             }
