@@ -1,0 +1,8 @@
+﻿<Application
+    x:Class="Ouch1978.Wpf.RedisKeyFilterSample.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:Ouch1978.Wpf.RedisKeyFilterSample"
+    StartupUri="MainWindow.xaml">
+    <Application.Resources />
+</Application>
